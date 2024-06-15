@@ -32,7 +32,7 @@ void setup() {
   TCCR1A = 0;
   TCNT1 = 0;
 
-  // Configura Noise Canceler, Input Capture and prescaler as 1024
+  // Configura Noise Canceler, Input Capture, Compare Match and prescaler as 1024
   TCCR1B = (1 << ICNC1) | (1 << ICES1) | (1 << WGM12) | (1 << CS12) | (1 << CS10);
 
   // Configura Input Capture Interrupt e Compare Match
