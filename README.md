@@ -2,13 +2,13 @@
 
 Utilizando o DS3231 como relógio de referência, devido a sua precisão de 2 partes por milhão (ppm) e compensação acerca da variação de temperatura, dois experimentos foram realizados para medir a precisão e exatidão da temporização do Arduíno Uno R3 em relação ao DS3231.
 
-Ambos os experimentos utilizam características do TIMER1, um dos 3 relógios disponibilizados pelo microcontrolador Atmega328p acoplado ao Arduíno Uno R3.
+Ambos os experimentos utilizam características do TIMER1, um dos 3 relógios do microcontrolador Atmega328p acoplado ao Arduíno Uno R3.
 
 ## Experimento 1 (exp1.h)
 
-Nele podem ser realizados `N` contagens de pulsos transmitidos pelo relógio DS3231 em 1 segundo. A saída 32KHz do DS3231 deve ser conectado na porta 8 do Arduíno, porque os pulsos são capturados através do (Input Capture Unit) ICU do TIMER1. Além do ICU é feita a configuração da interrupção por comparação (Compare Match) com pre-scaler de 1024, fazendo com que ela ocorra a cada 1s, momento em que a contagem encerra.
+Nele podem ser realizadas `N` contagens de pulsos transmitidos pelo relógio DS3231 em 1 segundo. A saída 32KHz do DS3231 deve ser conectada na porta 8 do Arduíno, porque os pulsos são capturados através do Input Capture Unit (ICU) do TIMER1. Também, é configurada a interrupção por comparação (Compare Match) com pre-scaler de 1024, fazendo com que ela ocorra a cada 1s, momento em que a contagem encerra.
 
-Caso a média das contagens seja abaixo de 32K, a temporização do Arduíno está adiantada em relação a referência.
+Caso a média das contagens seja abaixo de 32K, a temporização do Arduíno está adiantada em relação à referência.
 
 ## Experimento 2 (exp2.h)
 
