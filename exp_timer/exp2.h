@@ -2,7 +2,6 @@
 #define _EXP2_H
 
 #include <stdint.h>
-#include <util/atomic.h>
 
 const uint32_t TIMER_SIZE = 1L << 16;
 
@@ -32,7 +31,7 @@ void setup() {
   for (int i = 0; i < N; i++) result[i] = 0;
   interval[0] = interval[1] = 0;
 
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   noInterrupts();
 
@@ -76,7 +75,7 @@ void loop() {
     interval_idx = -1;
   }
 
-  if (run > N) {
+  if (run >= N) {
     for (int i = 0; i < N; i++) Serial.println(result[i]);
 
     finished = true;

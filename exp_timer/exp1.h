@@ -25,7 +25,7 @@ ISR(TIMER1_CAPT_vect) {
 void setup() {
   for (int i = 0; i < N; i++) result[i] = 0;
 
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   noInterrupts();
 
@@ -55,7 +55,7 @@ void loop() {
   can_write = false;
   result[run++] = counter_tmp;
 
-  if (run > N) {
+  if (run >= N) {
     for (uint8_t i = 0; i < N; i++) Serial.println(result[i]);
 
     finished = true;
