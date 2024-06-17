@@ -25,7 +25,7 @@ ISR(TIMER1_CAPT_vect) {
 void setup() {
   for (int i = 0; i < N; i++) result[i] = 0;
 
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   noInterrupts();
 
