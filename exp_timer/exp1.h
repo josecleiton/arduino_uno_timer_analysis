@@ -12,6 +12,7 @@ ISR(TIMER1_COMPA_vect) {
   noInterrupts();
 
   counter_tmp = current_counter;
+
   current_counter = 0;
   can_write = true;
 
